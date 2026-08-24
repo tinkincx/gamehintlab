@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://gamehintlab.com/videos/egg-index-guide/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://gamehintlab.com/media/grow-a-chicken-fighter-egg-index-guide-poster.png</video:thumbnail_loc>
+      <video:title>Grow a Chicken Fighter Egg Guide: Use the Live Index</video:title>
+      <video:description>This original visual explainer covers the recorded Flock to Index route, where to inspect visible egg-pool and rarity information, and why the live screen should be checked before spending. It is not gameplay footage and does not claim fixed pools, odds, prices or rewards.</video:description>
+      <video:content_loc>https://gamehintlab.com/media/grow-a-chicken-fighter-egg-index-guide.mp4</video:content_loc>
+      <video:duration>67</video:duration>
+      <video:publication_date>2026-08-19T00:00:00+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://gamehintlab.com/videos/fusion-screen-guide/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://gamehintlab.com/media/grow-a-chicken-fighter-fusion-guide-poster.png</video:thumbnail_loc>
+      <video:title>Grow a Chicken Fighter Fusion Guide: What the Fuse Screen Shows</video:title>
+      <video:description>This original visual explainer separates the developer's two-chicken fusion description from interface details reported in recorded gameplay: the Fuse route, second chicken, displayed cost and one version-sensitive base, donor, trait-lock and preview layout. It is not gameplay footage and claims no fixed recipe, odds, price, unlock requirement or input-consumption rule.</video:description>
+      <video:content_loc>https://gamehintlab.com/media/grow-a-chicken-fighter-fusion-guide.mp4</video:content_loc>
+      <video:duration>72</video:duration>
+      <video:publication_date>2026-08-19T00:00:00+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+</urlset>

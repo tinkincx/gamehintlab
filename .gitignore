@@ -1,0 +1,13 @@
+.next
+out
+node_modules
+.env
+.env.local
+.env.*
+!.env.example
+*.log
+/.wrangler/
+/outputs/
+/qa*/
+.DS_Store
+Thumbs.db

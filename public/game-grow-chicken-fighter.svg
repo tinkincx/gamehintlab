@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <title>Chicken fighter</title>
+  <circle cx="80" cy="80" r="70" fill="#e2f4e8"/>
+  <path d="M47 39c-5-7-2-17 6-19 6-1 11 3 12 9 3-8 14-9 19-3 4 5 2 12-3 17" fill="#1f8a5b" stroke="#17243a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M43 78c0-25 16-43 41-43 23 0 39 14 39 34 0 14-8 23-18 31l-2 29H54l3-31C48 94 43 88 43 78Z" fill="#fffef8" stroke="#17243a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m121 58 25 11-25 13Z" fill="#ffc83d" stroke="#17243a" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="101" cy="58" r="5" fill="#17243a"/>
+  <path d="M79 98c5-13 18-21 31-18 10 2 16 10 15 20 8 1 13 7 13 15 0 9-8 16-18 16H96c-13 0-22-8-22-19 0-6 2-10 5-14Z" fill="#1f8a5b" stroke="#17243a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M91 99c5 1 10 5 12 11M90 130v12h31v-12" fill="none" stroke="#17243a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M88 142h36" fill="none" stroke="#17243a" stroke-width="5" stroke-linecap="round"/>
+</svg>
