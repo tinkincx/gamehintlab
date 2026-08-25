@@ -34,7 +34,9 @@ export function ArticlePage({ page }) {
     .slice(0, 4);
   const inlineRelatedGuides = publishedGuideSlugs.has(page.slug) ? relatedGuides.slice(0, 3) : [];
   const pageUpdatedAtIso = page.updatedAtIso || site.checkedAtIso;
+  const pageCheckedAtIso = page.checkedAtIso || pageUpdatedAtIso;
   const pageUpdatedAt = formatIsoDate(pageUpdatedAtIso);
+  const pageCheckedAt = formatIsoDate(pageCheckedAtIso);
   const socialCard = getGuideSocialCard(page.slug);
   const breadcrumb = {
     "@context": "https://schema.org",
@@ -121,7 +123,9 @@ export function ArticlePage({ page }) {
             <h1>{page.title}</h1>
             <p className="article-intro">{page.intro}</p>
             <div className="article-meta">
-              <span>{page.shortTitle}</span><span>Last checked {pageUpdatedAt}</span><span>{page.sections.length} sections</span>
+              <span>{page.shortTitle}</span><span>Evidence checked {pageCheckedAt}</span>
+              {pageCheckedAtIso !== pageUpdatedAtIso ? <span>Updated {pageUpdatedAt}</span> : null}
+              <span>{page.sections.length} sections</span>
             </div>
           </div>
         </div>
@@ -177,7 +181,7 @@ export function ArticlePage({ page }) {
                   </li>
                 ))}
               </ul>
-              <p className="updated-note">Checked {pageUpdatedAt}. Game updates can change details.</p>
+              <p className="updated-note">Evidence checked {pageCheckedAt}. Game updates can change details.</p>
             </section>
 
             <nav className="article-more-guides" aria-label="Previous and next guides">
