@@ -43,7 +43,7 @@ const summaries = {
   "beginner-guide": "Recycler, Feeder, Tower, Index, Fuse and Rebirth for a first session.",
   chickens: "What chickens do, how Index shows egg sources and how to compare units.",
   eggs: "Flock and Index, source eggs, community rewards, event drops and offline eggs.",
-  abilities: "Cross-checked ability consensus for Tower, Pit, survival and control.",
+  abilities: "The best skills and abilities for Tower, Pit, survival and control, cross-checked across three current rankings.",
   "fusion-mutations": "How to open Fuse, select two chickens, inspect traits, preview the result and check cost.",
   "rebirth-guide": "Official purpose, current guide-reported resets and a pre-confirmation checklist.",
   "best-chickens-tier-list": "The comparisons still needed before naming a best chicken."
@@ -89,7 +89,7 @@ export default function HomePage() {
           <div className="hub-masthead-copy">
             <div className="hub-badges"><span>UNOFFICIAL FAN GUIDE</span><span>ROBLOX</span><span>{indexableGuideSlugs.size} LIVE GUIDES</span></div>
             <h1>Grow a Chicken Fighter</h1>
-            <p className="hub-tagline">Codes, chickens, eggs, Tower progression, fusion and rebirth guides.</p>
+            <p className="hub-tagline">Codes, best skills, chickens, eggs, Tower progression, fusion and rebirth guides.</p>
             <dl className="hub-facts">
               <div><dt>CREATOR</dt><dd>Sergio Verse Games</dd></div>
               <div><dt>START HERE</dt><dd>Recycler cash → Feeder levels → Tower</dd></div>
@@ -99,8 +99,8 @@ export default function HomePage() {
             <div className="hub-actions">
               <Link className="hub-primary" href={gamePath("beginner-guide")}>Start here <span>→</span></Link>
               <Link href={gamePath("codes")}>Check WELCOME code</Link>
+              <Link href={gamePath("abilities")}>Compare best skills</Link>
               <a href={site.officialGameUrl} target="_blank" rel="noreferrer">Play on Roblox ↗</a>
-              <Link href="#all-guides">All guides</Link>
             </div>
           </div>
         </section>

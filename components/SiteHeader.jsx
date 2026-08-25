@@ -18,7 +18,7 @@ export function SiteHeader() {
         <nav className="main-nav" aria-label="Game guides">
           <Link href="/how-to-fish/">How to Fish</Link>
           <Link href="/">GACF Hub</Link>
-          <Link href="/videos/">GACF Videos</Link>
+          <Link href={gamePath("abilities")}>GACF Best Skills</Link>
           <Link href={gamePath("codes")}>GACF Codes</Link>
           <Link href={gamePath("beginner-guide")}>GACF Beginner Guide</Link>
         </nav>

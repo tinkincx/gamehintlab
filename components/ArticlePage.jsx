@@ -13,6 +13,7 @@ const relatedGuideLabels = {
   "arena-ascension-egg": "Open the Arena update",
   "beginner-guide": "Follow the beginner route",
   eggs: "Find Thunder & Nest routes",
+  abilities: "Compare the best skills",
   "fusion-mutations": "Preview fusion safely",
   "rebirth-guide": "Prepare for rebirth",
   "official-links": "Open verified game links"
