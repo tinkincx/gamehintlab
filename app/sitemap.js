@@ -24,6 +24,7 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 0.82
     })),
+    { url: `${site.url}/shadow-dungeon/difficulty/`, lastModified: "2026-08-28", changeFrequency: "daily", priority: 0.84 },
     { url: `${site.url}/about/`, lastModified: "2026-08-28", changeFrequency: "monthly", priority: 0.4 },
     { url: `${site.url}/contact/`, lastModified: "2026-08-28", changeFrequency: "monthly", priority: 0.4 },
     { url: `${site.url}/privacy/`, lastModified: "2026-08-28", changeFrequency: "monthly", priority: 0.3 },

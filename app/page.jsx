@@ -10,6 +10,8 @@ function formatIsoDate(isoDate) {
 }
 
 const codesCheckedAt = formatIsoDate(pages.codes.updatedAtIso);
+const shadowDungeonPath = "/shadow-dungeon/difficulty/";
+const shadowDungeonImage = "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4423580/fc761d399d777e93bab35c6e6ae4a1cb8882fd05/library_capsule.jpg";
 
 export const metadata = {
   title: { absolute: "Grow a Chicken Fighter Guides | Game Hint Lab" },
@@ -110,6 +112,19 @@ export default function HomePage() {
             <article><span>02 · EARN</span><h3>Fight and upgrade</h3><p>Use Recycler cash, Feeder levels and Pit income to improve the unit you are actively pushing.</p></article>
             <article><span>03 · PROGRESS</span><h3>Climb, fuse, rebirth</h3><p>Push the Tower while fights remain reliable, preview every fusion, then read the Rebirth panel.</p></article>
           </div>
+        </section>
+
+        <section className="shell hub-block validation-test-block">
+          <header className="hub-block-header"><div><p className="hub-kicker">NEW RELEASE ANSWER</p><h2>One current question, answered properly</h2></div><p>We add a new game only when players are asking a specific question and reliable sources can answer it.</p></header>
+          <Link className="validation-test-card" href={shadowDungeonPath}>
+            <img src={shadowDungeonImage} alt="Official Shadow Dungeon Steam artwork" width="300" height="450" />
+            <div>
+              <p><span>STEAM · RELEASED AUG 26</span><b>CHECKED AUG 28</b></p>
+              <h3>How does difficulty work in Shadow Dungeon?</h3>
+              <p>Campaign map scaling, Greater Rifts, Normal through Inferno, the level 100 cap and Paragon—based on the developer&apos;s 1.0 notes.</p>
+              <strong>Read the difficulty answer →</strong>
+            </div>
+          </Link>
         </section>
 
         <section className="shell hub-block">
