@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { AnalyticsPreferencesButton } from "@/components/AnalyticsPreferencesButton";
-import { howToFishGame } from "@/lib/how-to-fish";
 import { gamePath, navigation, site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -14,8 +13,7 @@ export function SiteFooter() {
         <div>
           <h2>Game guides</h2>
           <div className="footer-links">
-            <Link href="/how-to-fish/">How to Fish Steam Guides</Link>
-            <Link href="/videos/">GACF Video Guides</Link>
+            <Link href="/videos/">Video Guides</Link>
             {navigation.map((item) => <Link href={gamePath(item.slug)} key={item.slug}>{item.label}</Link>)}
           </div>
           <Link className="footer-library-link" href="/#all-guides">See all GACF guides &rarr;</Link>
@@ -34,7 +32,7 @@ export function SiteFooter() {
       </div>
       <div className="shell footer-bottom">
         <span>&copy; 2026 {site.name}. Unofficial fan site.</span>
-        <a href={howToFishGame.officialUrl} target="_blank" rel="noreferrer">How to Fish official Steam page &rarr;</a>
+        <a href={site.officialGameUrl} target="_blank" rel="noreferrer">Official Grow a Chicken Fighter page &rarr;</a>
       </div>
     </footer>
   );

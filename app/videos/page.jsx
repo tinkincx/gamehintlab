@@ -66,8 +66,8 @@ export default function VideoLibraryPage() {
         <p className="eyebrow">Original visual guides</p>
         <h1>Grow a Chicken Fighter video guides</h1>
         <p className="video-library-intro">
-          Two short, captioned walkthroughs built from the same source boundaries as the written guides.
-          They show what to check on the live screen without inventing fixed odds, recipes or rewards.
+          Two short, captioned animated explainers built from the same source boundaries as the written guides.
+          They are not gameplay footage. They explain what linked gameplay sources report and what to check on your live screen without inventing fixed odds, recipes or rewards.
         </p>
         <dl className="video-library-facts">
           <div><dt>VIDEOS</dt><dd>{videoList.length}</dd></div>
@@ -101,8 +101,8 @@ export default function VideoLibraryPage() {
         <p className="hub-kicker">WHAT THESE VIDEOS DO</p>
         <h2>Use the screen in front of you</h2>
         <p>
-          Grow a Chicken Fighter can change after an update. Each video separates developer-listed systems
-          from controls observed in recorded gameplay, then points you back to the current in-game screen for changing values.
+          Grow a Chicken Fighter can change after an update. These animated explainers separate developer-listed systems
+          from controls reported in linked gameplay recordings, then point you back to the current in-game screen for changing values.
         </p>
       </section>
     </main>

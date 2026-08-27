@@ -35,6 +35,7 @@ export function ArticlePage({ page }) {
   const inlineRelatedGuides = publishedGuideSlugs.has(page.slug) ? relatedGuides.slice(0, 3) : [];
   const pageUpdatedAtIso = page.updatedAtIso || site.checkedAtIso;
   const pageCheckedAtIso = page.checkedAtIso || pageUpdatedAtIso;
+  const pagePublishedAt = formatIsoDate(site.publishedAtIso);
   const pageUpdatedAt = formatIsoDate(pageUpdatedAtIso);
   const pageCheckedAt = formatIsoDate(pageCheckedAtIso);
   const socialCard = getGuideSocialCard(page.slug);
@@ -123,7 +124,9 @@ export function ArticlePage({ page }) {
             <h1>{page.title}</h1>
             <p className="article-intro">{page.intro}</p>
             <div className="article-meta">
-              <span>{page.shortTitle}</span><span>Evidence checked {pageCheckedAt}</span>
+              <span>Published by <Link href="/about/">Game Hint Lab</Link></span>
+              <span>First published {pagePublishedAt}</span>
+              <span>Evidence checked {pageCheckedAt}</span>
               {pageCheckedAtIso !== pageUpdatedAtIso ? <span>Updated {pageUpdatedAt}</span> : null}
               <span>{page.sections.length} sections</span>
             </div>
@@ -182,6 +185,7 @@ export function ArticlePage({ page }) {
                 ))}
               </ul>
               <p className="updated-note">Evidence checked {pageCheckedAt}. Game updates can change details.</p>
+              <p className="updated-note">Prepared by Game Hint Lab from the cited official pages, current guide reports and timestamped gameplay sources. Software may assist organization and drafting, but it is not treated as evidence. Read our <Link href="/about/#method">editorial and verification method</Link>.</p>
             </section>
 
             <nav className="article-more-guides" aria-label="Previous and next guides">

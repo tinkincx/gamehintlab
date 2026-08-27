@@ -113,6 +113,8 @@ export default async function VideoWatchPage({ params }) {
           <p>{item.intro}</p>
           <div className="watch-meta">
             <span>{item.durationLabel}</span>
+            <span>Animated explainer · not gameplay footage</span>
+            <span>Published by Game Hint Lab</span>
             <span>English narration</span>
             <span>Captions included</span>
             <span>Updated {site.checkedAt}</span>
@@ -120,6 +122,10 @@ export default async function VideoWatchPage({ params }) {
         </header>
 
         <ArticleVideo video={item.video} showHeading={false} />
+
+        <section className="watch-section watch-boundaries">
+          <p><strong>Format disclosure:</strong> this is a Game Hint Lab animated explainer, not captured gameplay. Interface claims come from the linked gameplay sources in the related written guide and should be checked against the current live game.</p>
+        </section>
 
         <div className="watch-actions">
           <Link className="hub-primary" href={gamePath(item.guideSlug)}>Read the full written guide <span>→</span></Link>

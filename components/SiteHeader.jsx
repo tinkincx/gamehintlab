@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { howToFishGame } from "@/lib/how-to-fish";
 import { gamePath, site } from "@/lib/site";
 
 export function SiteHeader() {
@@ -16,13 +15,13 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="main-nav" aria-label="Game guides">
-          <Link href="/how-to-fish/">How to Fish</Link>
-          <Link href="/">GACF Hub</Link>
-          <Link href={gamePath("abilities")}>GACF Best Skills</Link>
-          <Link href={gamePath("codes")}>GACF Codes</Link>
-          <Link href={gamePath("beginner-guide")}>GACF Beginner Guide</Link>
+          <Link href="/">Guide Hub</Link>
+          <Link href={gamePath("abilities")}>Best Skills</Link>
+          <Link href={gamePath("codes")}>Codes</Link>
+          <Link href={gamePath("beginner-guide")}>Beginner Guide</Link>
+          <Link href="/videos/">Videos</Link>
         </nav>
-        <a className="play-button" href={howToFishGame.officialUrl} target="_blank" rel="noreferrer">How to Fish on Steam <span aria-hidden="true">↗</span></a>
+        <a className="play-button" href={site.officialGameUrl} target="_blank" rel="noreferrer">Play on Roblox <span aria-hidden="true">↗</span></a>
       </div>
     </header>
   );

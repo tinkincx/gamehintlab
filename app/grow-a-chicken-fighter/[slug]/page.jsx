@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import { ArticlePage } from "@/components/ArticlePage";
-import { indexableGuideSlugs } from "@/lib/publishing";
+import { indexableGuideSlugList, indexableGuideSlugs } from "@/lib/publishing";
 import { getGuideSocialCard } from "@/lib/social-cards";
-import { allRoutes, gameAbsoluteUrl, gamePath, pages, site } from "@/lib/site";
+import { gameAbsoluteUrl, gamePath, pages, site } from "@/lib/site";
 
 export function generateStaticParams() {
-  return allRoutes.map((item) => ({ slug: item.slug }));
+  return indexableGuideSlugList.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }) {

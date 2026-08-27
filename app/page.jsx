@@ -1,13 +1,8 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { howToFishGame, howToFishPageList, howToFishPages, howToFishPath } from "@/lib/how-to-fish";
 import { indexableGuideSlugs } from "@/lib/publishing";
-import { gamePath, pageList, pages, researchPageList, site } from "@/lib/site";
-import { validationPages } from "@/lib/validation-pages";
+import { gamePath, pageList, pages, site } from "@/lib/site";
 import { videoPath } from "@/lib/videos";
-
-const liveSlugs = indexableGuideSlugs;
-const trendingGuide = validationPages[0];
 
 function formatIsoDate(isoDate) {
   return new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" })
@@ -17,7 +12,7 @@ function formatIsoDate(isoDate) {
 const codesCheckedAt = formatIsoDate(pages.codes.updatedAtIso);
 
 export const metadata = {
-  title: { absolute: "Game Hint Lab: Fresh Game Guides & Search Answers" },
+  title: { absolute: "Grow a Chicken Fighter Guides | Game Hint Lab" },
   description: site.description,
   alternates: { canonical: "/" },
   robots: {
@@ -28,49 +23,40 @@ export const metadata = {
 };
 
 const goals = [
-  { tag: "STARTER", status: "LIVE", title: "I'm new to the game", text: "Follow a recorded first-session route through Recycler cash, Feeder levels, Tower fights, fusion and rebirth.", slug: "beginner-guide" },
+  { tag: "STARTER", status: "LIVE", title: "I'm new to the game", text: "Follow a source-checked first-session route through Recycler cash, Feeder levels, Tower fights, fusion and rebirth.", slug: "beginner-guide" },
   { tag: "CODES", status: "UPDATED", title: "Check the current codes", text: `Open the dedicated tracker for new reports, developer-listed evidence, expired codes and the ${codesCheckedAt} check.`, slug: "codes" },
-  { tag: "UPDATE", status: "LIVE", title: "Unlock the Ascension Egg", text: "See the official Arena, trophy, Rebirth milestone and Admin Abuse details before the event ends August 29.", slug: "arena-ascension-egg" },
   { tag: "EGGS", status: "LIVE", title: "Find Thunder & Nest routes", text: "Check the reported community reward and event routes, then verify the live Index before spending.", slug: "eggs" },
+  { tag: "COMBAT", status: "UPDATED", title: "Compare the best skills", text: "See where three current rankings agree, where they conflict and which abilities fit survival or control.", slug: "abilities" },
   { tag: "FUSION", status: "LIVE", title: "Preview fusion safely", text: "Choose two chickens, inspect the trait lock, result preview and displayed cost before confirming.", slug: "fusion-mutations" },
   { tag: "PROGRESSION", status: "LIVE", title: "Prepare for rebirth", text: "See what the developer confirms, what a current guide reports resets, and what to verify on the live screen.", slug: "rebirth-guide" },
 ];
 
 const summaries = {
   codes: "New reports, developer-listed evidence, expired codes and redemption fixes in one tracker.",
-  "arena-ascension-egg": "Official Arena, trophy, Rebirth milestone, Ascension Egg and Admin Abuse details.",
-  "official-links": "The Roblox experience, creator group and reported community destination.",
   "beginner-guide": "Recycler, Feeder, Tower, Index, Fuse and Rebirth for a first session.",
-  chickens: "What chickens do, how Index shows egg sources and how to compare units.",
   eggs: "Flock and Index, source eggs, community rewards, event drops and offline eggs.",
   abilities: "The best skills and abilities for Tower, Pit, survival and control, cross-checked across three current rankings.",
   "fusion-mutations": "How to open Fuse, select two chickens, inspect traits, preview the result and check cost.",
-  "rebirth-guide": "Official purpose, current guide-reported resets and a pre-confirmation checklist.",
-  "best-chickens-tier-list": "The comparisons still needed before naming a best chicken."
+  "rebirth-guide": "Official purpose, current guide-reported resets and a pre-confirmation checklist."
 };
 
 const categories = {
   codes: "UTILITY",
-  "arena-ascension-egg": "UPDATE",
-  "official-links": "OFFICIAL",
   "beginner-guide": "STARTER",
-  chickens: "COLLECTION",
   eggs: "COLLECTION",
   abilities: "COMBAT",
   "fusion-mutations": "PROGRESSION",
-  "rebirth-guide": "PROGRESSION",
-  "best-chickens-tier-list": "RANKINGS"
+  "rebirth-guide": "PROGRESSION"
 };
 
 const homeFaqs = [
   { q: "Where can I check current Grow a Chicken Fighter codes?", a: `Use the dedicated codes guide, checked on ${codesCheckedAt}. It separates developer-listed evidence from cross-site reports and expired codes instead of repeating an undated list on the homepage.` },
-  { q: "How do I get the Ascension Egg?", a: "The official Arena event ties the Ascension Egg to new Rebirth milestones. Check the live milestone panel because Roblox does not publish the exact required Rebirth count in the event description." },
-  { q: "What should a new player do first?", a: "A recorded fresh-account route starts by collecting recyclables for Recycler cash, then upgrading Recycler for money or Feeder for chicken levels before pushing the Tower." },
+  { q: "What should a new player do first?", a: "Current gameplay guides start by collecting recyclables for Recycler cash, then upgrading Recycler for money or Feeder for chicken levels before pushing the Tower." },
   { q: "How does fusion work?", a: "The official description confirms two chicken inputs and a mutated result. Current gameplay also shows a base, donor, locked fields, a preview and a displayed cost; read all of them before confirming." },
   { q: "What resets when I rebirth?", a: "A current third-party guide reports that money and troop level reset while the chicken collection remains. Verify the complete list and earning benefit on the live Rebirth screen." }
 ];
 
-const allGuides = [...pageList, ...researchPageList];
+const allGuides = pageList;
 
 export default function HomePage() {
   const website = { "@context": "https://schema.org", "@type": "WebSite", name: site.name, url: site.url, description: site.description, inLanguage: "en" };
@@ -105,27 +91,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="shell hub-block steam-trending-block">
-          <header className="hub-block-header"><div><p className="hub-kicker">HOT ON STEAM</p><h2>How to Fish just launched</h2></div><p>We published the pages now and will use the next 72 hours to expand the queries that earn real impressions.</p></header>
-          <Link className="steam-trending-card" href="/how-to-fish/">
-            <img src={howToFishGame.artPath} alt="Official How to Fish Steam artwork" width="1232" height="706" />
-            <div>
-              <p><span>NEW RELEASE</span><b>AUG 20 · STEAM</b></p>
-              <h3>How to Fish</h3>
-              <p>Controls, fish collection, weapons, the shark quest and all five islands—without guessing unverified keys or locations.</p>
-              <ul>
-                <li>Current co-op guide</li><li>28 achievements</li><li>{howToFishPageList.length} focused answers live</li>
-              </ul>
-              <strong>Open the How to Fish guide hub →</strong>
-            </div>
-          </Link>
-          <div className="steam-trending-links" aria-label="Popular How to Fish answers">
-            <Link href={howToFishPath("complete-walkthrough")}>{howToFishPages["complete-walkthrough"]?.cardTitle || "Complete walkthrough"} →</Link>
-            <Link href={howToFishPath("how-to-get-boat-keys")}>{howToFishPages["how-to-get-boat-keys"]?.cardTitle || "Get the boat keys"} →</Link>
-            <Link href={howToFishPath("multiplayer-player-count")}>{howToFishPages["multiplayer-player-count"]?.cardTitle || "Multiplayer player count"} →</Link>
-          </div>
-        </section>
-
         <section className="shell hub-block">
           <header className="hub-block-header"><div><p className="hub-kicker">CHOOSE A GOAL</p><h2>What do you need?</h2></div><p>Open the guide that answers the decision in front of you.</p></header>
           <div className="goal-grid">
@@ -139,7 +104,7 @@ export default function HomePage() {
         </section>
 
         <section className="shell hub-block">
-          <header className="hub-block-header"><div><p className="hub-kicker">CORE LOOP</p><h2>How the systems connect</h2></div><p>Official systems paired with steps shown in current gameplay recordings. Live values can change.</p></header>
+          <header className="hub-block-header"><div><p className="hub-kicker">CORE LOOP</p><h2>How the systems connect</h2></div><p>Official systems paired with steps checked against linked gameplay sources. Live values can change.</p></header>
           <div className="mechanic-grid">
             <article><span>01 · COLLECT</span><h3>Hatch eggs</h3><p>Collect chickens and use Flock → Index to check which egg a chicken comes from.</p></article>
             <article><span>02 · EARN</span><h3>Fight and upgrade</h3><p>Use Recycler cash, Feeder levels and Pit income to improve the unit you are actively pushing.</p></article>
@@ -148,7 +113,7 @@ export default function HomePage() {
         </section>
 
         <section className="shell hub-block">
-          <header className="hub-block-header"><div><p className="hub-kicker">ORIGINAL VIDEO GUIDES</p><h2>Watch the 60-second walkthroughs</h2></div><p>Short visual explainers with English narration and captions. No fixed odds, recipes or rewards are invented.</p></header>
+          <header className="hub-block-header"><div><p className="hub-kicker">ORIGINAL VIDEO GUIDES</p><h2>Watch the 60-second explainers</h2></div><p>Short animated explainers—not gameplay footage—with English narration and captions. No fixed odds, recipes or rewards are invented.</p></header>
           <div className="hub-video-grid">
             <Link className="hub-video-card" href={videoPath("egg-index-guide")}>
               <div className="hub-video-poster">
@@ -169,30 +134,17 @@ export default function HomePage() {
 
         <section className="hub-guide-band" id="all-guides">
           <div className="shell hub-block">
-            <header className="hub-block-header"><div><p className="hub-kicker">GUIDE LIBRARY</p><h2>All guides</h2></div><p>{indexableGuideSlugs.size} live guides · {allGuides.length - indexableGuideSlugs.size} pages still being verified.</p></header>
+            <header className="hub-block-header"><div><p className="hub-kicker">GUIDE LIBRARY</p><h2>Core guides</h2></div><p>{allGuides.length} focused guides, each with a direct answer, evidence links and a visible check date.</p></header>
             <div className="all-guide-grid">
               {allGuides.map((page) => (
                 <Link className="hub-guide-card" href={gamePath(page.slug)} key={page.slug}>
-                  <div><span>{categories[page.slug]}</span><b>{liveSlugs.has(page.slug) ? "LIVE" : "LIMITED DATA"}</b></div>
+                  <div><span>{categories[page.slug]}</span><b>SOURCE CHECKED</b></div>
                   <h3>{page.title}</h3><p>{summaries[page.slug]}</p>
-                  <footer><small>Checked {formatIsoDate(page.updatedAtIso || site.checkedAtIso)}</small><strong>{liveSlugs.has(page.slug) ? "Read guide →" : "See known facts →"}</strong></footer>
+                  <footer><small>Checked {formatIsoDate(page.updatedAtIso || site.checkedAtIso)}</small><strong>Read guide →</strong></footer>
                 </Link>
               ))}
             </div>
           </div>
-        </section>
-
-        <section className="shell hub-block validation-test-block">
-          <header className="hub-block-header"><div><p className="hub-kicker">TRENDING NOW</p><h2>A new Roblox guide</h2></div><p>One current game, one source-checked answer page.</p></header>
-          <Link className="validation-test-card" href={trendingGuide.path}>
-            <img src={trendingGuide.iconUrl} alt="Cheating During Testing Roblox game icon" width="512" height="512" />
-            <div>
-              <p><span>NEW GUIDE</span><b>UPDATED AUG 23</b></p>
-              <h3>{trendingGuide.gameName}</h3>
-              <p>{trendingGuide.summary}</p>
-              <strong>Open the Roblox guide →</strong>
-            </div>
-          </Link>
         </section>
 
         <section className="shell hub-block hub-faq">
