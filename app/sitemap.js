@@ -7,8 +7,14 @@ import { videoAbsoluteUrl, videoList } from "@/lib/videos";
 export const dynamic = "force-static";
 
 export default function sitemap() {
+  const homeLastModified = [
+    howToFishGame.updatedAtIso,
+    ...publishedGuides.map((guide) => pages[guide.slug].updatedAtIso || site.checkedAtIso),
+    ...validationPages.map((page) => page.updatedAtIso)
+  ].reduce((latest, current) => current > latest ? current : latest, site.checkedAtIso);
+
   return [
-    { url: `${site.url}/`, lastModified: howToFishGame.updatedAtIso, changeFrequency: "daily", priority: 1 },
+    { url: `${site.url}/`, lastModified: homeLastModified, changeFrequency: "daily", priority: 1 },
     { url: howToFishAbsoluteUrl(), lastModified: howToFishGame.updatedAtIso, changeFrequency: "daily", priority: 0.95 },
     ...howToFishPageList.map((page) => ({
       url: howToFishAbsoluteUrl(page.slug),

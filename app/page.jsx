@@ -29,7 +29,7 @@ export const metadata = {
 
 const goals = [
   { tag: "STARTER", status: "LIVE", title: "I'm new to the game", text: "Follow a recorded first-session route through Recycler cash, Feeder levels, Tower fights, fusion and rebirth.", slug: "beginner-guide" },
-  { tag: "CODES", status: "LIVE", title: "Check the WELCOME code", text: `See the developer-listed code, its ${codesCheckedAt} check date, EGGSCELLENT reports and quick redemption fixes.`, slug: "codes" },
+  { tag: "CODES", status: "UPDATED", title: "Check the current codes", text: `Open the dedicated tracker for new reports, developer-listed evidence, expired codes and the ${codesCheckedAt} check.`, slug: "codes" },
   { tag: "UPDATE", status: "LIVE", title: "Unlock the Ascension Egg", text: "See the official Arena, trophy, Rebirth milestone and Admin Abuse details before the event ends August 29.", slug: "arena-ascension-egg" },
   { tag: "EGGS", status: "LIVE", title: "Find Thunder & Nest routes", text: "Check the reported community reward and event routes, then verify the live Index before spending.", slug: "eggs" },
   { tag: "FUSION", status: "LIVE", title: "Preview fusion safely", text: "Choose two chickens, inspect the trait lock, result preview and displayed cost before confirming.", slug: "fusion-mutations" },
@@ -37,7 +37,7 @@ const goals = [
 ];
 
 const summaries = {
-  codes: "The developer-listed code, reported alternatives and redemption fixes.",
+  codes: "New reports, developer-listed evidence, expired codes and redemption fixes in one tracker.",
   "arena-ascension-egg": "Official Arena, trophy, Rebirth milestone, Ascension Egg and Admin Abuse details.",
   "official-links": "The Roblox experience, creator group and reported community destination.",
   "beginner-guide": "Recycler, Feeder, Tower, Index, Fuse and Rebirth for a first session.",
@@ -63,7 +63,7 @@ const categories = {
 };
 
 const homeFaqs = [
-  { q: "What is the current Grow a Chicken Fighter code?", a: `WELCOME appeared in the developer's Roblox description when checked on ${codesCheckedAt}. The official description did not state its reward.` },
+  { q: "Where can I check current Grow a Chicken Fighter codes?", a: `Use the dedicated codes guide, checked on ${codesCheckedAt}. It separates developer-listed evidence from cross-site reports and expired codes instead of repeating an undated list on the homepage.` },
   { q: "How do I get the Ascension Egg?", a: "The official Arena event ties the Ascension Egg to new Rebirth milestones. Check the live milestone panel because Roblox does not publish the exact required Rebirth count in the event description." },
   { q: "What should a new player do first?", a: "A recorded fresh-account route starts by collecting recyclables for Recycler cash, then upgrading Recycler for money or Feeder for chicken levels before pushing the Tower." },
   { q: "How does fusion work?", a: "The official description confirms two chicken inputs and a mutated result. Current gameplay also shows a base, donor, locked fields, a preview and a displayed cost; read all of them before confirming." },
@@ -93,12 +93,12 @@ export default function HomePage() {
             <dl className="hub-facts">
               <div><dt>CREATOR</dt><dd>Sergio Verse Games</dd></div>
               <div><dt>START HERE</dt><dd>Recycler cash → Feeder levels → Tower</dd></div>
-              <div><dt>CURRENT CODE</dt><dd className="fact-highlight">WELCOME</dd></div>
+              <div><dt>CODE TRACKER</dt><dd className="fact-highlight">6 reported · 1 developer-listed</dd></div>
               <div><dt>CODE CHECKED</dt><dd>{codesCheckedAt}</dd></div>
             </dl>
             <div className="hub-actions">
               <Link className="hub-primary" href={gamePath("beginner-guide")}>Start here <span>→</span></Link>
-              <Link href={gamePath("codes")}>Check WELCOME code</Link>
+              <Link href={gamePath("codes")}>Open current codes</Link>
               <Link href={gamePath("abilities")}>Compare best skills</Link>
               <a href={site.officialGameUrl} target="_blank" rel="noreferrer">Play on Roblox ↗</a>
             </div>

@@ -9,7 +9,7 @@ import { absoluteUrl, gameAbsoluteUrl, gamePath, pages, site } from "@/lib/site"
 const publishedGuideSlugs = new Set(publishedGuides.map((guide) => guide.slug));
 
 const relatedGuideLabels = {
-  codes: "Check WELCOME code",
+  codes: "Open current codes",
   "arena-ascension-egg": "Open the Arena update",
   "beginner-guide": "Follow the beginner route",
   eggs: "Find Thunder & Nest routes",
