@@ -13,10 +13,12 @@ export function SiteFooter() {
         <div>
           <h2>Game guides</h2>
           <div className="footer-links">
+            <Link href="/how-to-fish/">How to Fish</Link>
+            <Link href="/#all-guides">Grow a Chicken Fighter</Link>
             <Link href="/videos/">Video Guides</Link>
             {navigation.map((item) => <Link href={gamePath(item.slug)} key={item.slug}>{item.label}</Link>)}
           </div>
-          <Link className="footer-library-link" href="/#all-guides">See all GACF guides &rarr;</Link>
+          <Link className="footer-library-link" href="/#current-games">Browse current games &rarr;</Link>
         </div>
         <div>
           <h2>About &amp; legal</h2>
@@ -32,7 +34,7 @@ export function SiteFooter() {
       </div>
       <div className="shell footer-bottom">
         <span>&copy; 2026 {site.name}. Unofficial fan site.</span>
-        <a href={site.officialGameUrl} target="_blank" rel="noreferrer">Official Grow a Chicken Fighter page &rarr;</a>
+        <Link href="/#current-games">Current game coverage &rarr;</Link>
       </div>
     </footer>
   );

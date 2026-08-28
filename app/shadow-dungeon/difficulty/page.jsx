@@ -11,7 +11,7 @@ const officialNewsUrl = "https://steamcommunity.com/app/4423580/allnews/";
 const steamCommunityUrl = "https://steamcommunity.com/app/4423580/discussions/";
 const steamDbUrl = "https://steamdb.info/app/4423580/charts/";
 const headerImage = "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4423580/c7169de56a893cba3b8dba5674f6c4fe34ca96ab/header.jpg?t=1787744876";
-const portraitImage = "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4423580/fc761d399d777e93bab35c6e6ae4a1cb8882fd05/library_capsule.jpg";
+const portraitImage = "/shadow-dungeon/game-art.jpg";
 
 const title = "How to Increase Difficulty in Shadow Dungeon: Greater Rifts";
 const description =

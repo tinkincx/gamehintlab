@@ -4,8 +4,8 @@ import { JsonLd } from "@/components/JsonLd";
 import {
   howToFishAbsoluteUrl,
   howToFishGame,
-  howToFishPages,
-  howToFishPath
+  howToFishPath,
+  publishedHowToFishPages
 } from "@/lib/how-to-fish";
 import { site } from "@/lib/site";
 
@@ -20,7 +20,7 @@ export function HowToFishGuidePage({ page }) {
   const pageUrl = howToFishAbsoluteUrl(page.slug);
   const checkedAt = formatDate(page.updatedAtIso);
   const relatedPages = (page.relatedSlugs || [])
-    .map((slug) => howToFishPages[slug])
+    .map((slug) => publishedHowToFishPages[slug])
     .filter(Boolean);
 
   const breadcrumb = {
@@ -49,6 +49,8 @@ export function HowToFishGuidePage({ page }) {
       "@type": "VideoGame",
       name: howToFishGame.name,
       url: howToFishGame.officialUrl,
+      sameAs: [howToFishGame.officialUrl],
+      identifier: `Steam App ${howToFishGame.appId}`,
       gamePlatform: "Windows PC (Steam)"
     }
   };
@@ -57,6 +59,8 @@ export function HowToFishGuidePage({ page }) {
     "@type": "VideoGame",
     name: howToFishGame.name,
     url: howToFishGame.officialUrl,
+    sameAs: [howToFishGame.officialUrl],
+    identifier: `Steam App ${howToFishGame.appId}`,
     image: `${site.url}${howToFishGame.artPath}`,
     gamePlatform: "Windows PC (Steam)",
     applicationCategory: "Game",
@@ -152,7 +156,7 @@ export function HowToFishGuidePage({ page }) {
               <ul>
                 {page.sources.map((source) => (
                   <li key={source.url}>
-                    <a href={source.url} target="_blank" rel="noreferrer">{source.label} &nearr;</a>
+                    <a href={source.url} target="_blank" rel="noreferrer">{source.label} <span aria-hidden="true">↗</span></a>
                     <span>{source.note}</span>
                   </li>
                 ))}

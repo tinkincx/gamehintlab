@@ -530,7 +530,7 @@ button, input, textarea, select { font: inherit; }
   .brand-mark { width: 37px; height: 37px; font-size: 22px; }
   .brand-mark img { width: 26px; height: 26px; }
   .play-button { padding: 8px 9px; font-size: 0; }
-  .play-button::before { content: "Play"; font-size: 11px; }
+  .play-button::before { content: "Games"; font-size: 11px; }
   .play-button span { display: inline; font-size: 11px; }
   .home-hero h1 { font-size: 42px; }
   .hero-actions { display: grid; }
@@ -759,6 +759,7 @@ button, input, textarea, select { font: inherit; }
 .hub-guide-card small { color: #858a83; font-size: 10px; }
 .hub-guide-card footer strong { color: var(--green-deep); font-size: 11px; }
 .validation-test-block { max-width: 940px; }
+.validation-test-list { display: grid; gap: 18px; }
 .validation-test-card { display: grid; grid-template-columns: 168px minmax(0,1fr); overflow: hidden; background: #102c20; border: 1px solid #225f42; border-radius: 17px; box-shadow: 0 18px 40px rgba(18,45,32,.12); transition: .18s ease; }
 .validation-test-card:hover { transform: translateY(-3px); border-color: #74a98a; box-shadow: 0 22px 46px rgba(18,45,32,.18); }
 .validation-test-card > img { display: block; width: 168px; height: 100%; min-height: 168px; object-fit: cover; }

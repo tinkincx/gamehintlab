@@ -16,12 +16,12 @@ export function SiteHeader() {
         </Link>
         <nav className="main-nav" aria-label="Game guides">
           <Link href="/">Guide Hub</Link>
+          <Link href="/how-to-fish/">How to Fish</Link>
           <Link href={gamePath("abilities")}>Best Skills</Link>
           <Link href={gamePath("codes")}>Codes</Link>
-          <Link href={gamePath("beginner-guide")}>Beginner Guide</Link>
           <Link href="/videos/">Videos</Link>
         </nav>
-        <a className="play-button" href={site.officialGameUrl} target="_blank" rel="noreferrer">Play on Roblox <span aria-hidden="true">↗</span></a>
+        <Link className="play-button" href="/#current-games">Current games <span aria-hidden="true">↓</span></Link>
       </div>
     </header>
   );

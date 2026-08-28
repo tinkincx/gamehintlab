@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
+import { howToFishGame } from "@/lib/how-to-fish";
 import { indexableGuideSlugs } from "@/lib/publishing";
 import { gamePath, pageList, pages, site } from "@/lib/site";
 import { videoPath } from "@/lib/videos";
@@ -11,7 +12,7 @@ function formatIsoDate(isoDate) {
 
 const codesCheckedAt = formatIsoDate(pages.codes.updatedAtIso);
 const shadowDungeonPath = "/shadow-dungeon/difficulty/";
-const shadowDungeonImage = "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4423580/fc761d399d777e93bab35c6e6ae4a1cb8882fd05/library_capsule.jpg";
+const shadowDungeonImage = "/shadow-dungeon/game-art.jpg";
 
 export const metadata = {
   title: { absolute: "Grow a Chicken Fighter Guides | Game Hint Lab" },
@@ -114,17 +115,28 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="shell hub-block validation-test-block">
-          <header className="hub-block-header"><div><p className="hub-kicker">NEW RELEASE ANSWER</p><h2>One current question, answered properly</h2></div><p>We add a new game only when players are asking a specific question and reliable sources can answer it.</p></header>
-          <Link className="validation-test-card" href={shadowDungeonPath}>
-            <img src={shadowDungeonImage} alt="Official Shadow Dungeon Steam artwork" width="300" height="450" />
-            <div>
-              <p><span>STEAM · RELEASED AUG 26</span><b>CHECKED AUG 28</b></p>
-              <h3>How does difficulty work in Shadow Dungeon?</h3>
-              <p>Campaign map scaling, Greater Rifts, Normal through Inferno, the level 100 cap and Paragon—based on the developer&apos;s 1.0 notes.</p>
-              <strong>Read the difficulty answer →</strong>
-            </div>
-          </Link>
+        <section className="shell hub-block validation-test-block" id="current-games">
+          <header className="hub-block-header"><div><p className="hub-kicker">CURRENT GAME ANSWERS</p><h2>New releases under active testing</h2></div><p>Each game earns more pages only after search impressions or real player questions show demand.</p></header>
+          <div className="validation-test-list">
+            <Link className="validation-test-card" href={howToFishGame.path}>
+              <img src={howToFishGame.artPath} alt="Official How to Fish Steam artwork" width="1232" height="706" />
+              <div>
+                <p><span>STEAM · RELEASED AUG 20</span><b>CHECKED AUG 28</b></p>
+                <h3>How to Fish game guides</h3>
+                <p>Boat keys, Pufferfish, eight-player and private lobbies, console plans, crossplay status and Steam Deck verification.</p>
+                <strong>Open 4 current answers →</strong>
+              </div>
+            </Link>
+            <Link className="validation-test-card" href={shadowDungeonPath}>
+              <img src={shadowDungeonImage} alt="Official Shadow Dungeon Steam artwork" width="300" height="450" />
+              <div>
+                <p><span>STEAM · RELEASED AUG 26</span><b>CHECKED AUG 28</b></p>
+                <h3>How does difficulty work in Shadow Dungeon?</h3>
+                <p>Campaign map scaling, Greater Rifts, Normal through Inferno, the level 100 cap and Paragon—based on the developer&apos;s 1.0 notes.</p>
+                <strong>Read the difficulty answer →</strong>
+              </div>
+            </Link>
+          </div>
         </section>
 
         <section className="shell hub-block">
