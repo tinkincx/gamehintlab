@@ -5,6 +5,10 @@ import {
 } from "@/lib/how-to-fish";
 import { gameAbsoluteUrl, pages, site } from "@/lib/site";
 import { videoAbsoluteUrl, videoList } from "@/lib/videos";
+import {
+  zeroCompanyGame,
+  zeroCompanyPageList
+} from "@/lib/zero-company";
 
 export const dynamic = "force-static";
 
@@ -12,7 +16,9 @@ export default function sitemap() {
   const homeLastModified = [
     ...publishedGuides.map((guide) => pages[guide.slug].updatedAtIso || site.checkedAtIso),
     howToFishGame.updatedAtIso,
-    ...publishedHowToFishPageList.map((page) => page.updatedAtIso)
+    ...publishedHowToFishPageList.map((page) => page.updatedAtIso),
+    zeroCompanyGame.updatedAtIso,
+    ...zeroCompanyPageList.map((page) => page.updatedAtIso)
   ].reduce((latest, current) => current > latest ? current : latest, site.checkedAtIso);
 
   return [
@@ -29,6 +35,13 @@ export default function sitemap() {
       lastModified: page.updatedAtIso,
       changeFrequency: "weekly",
       priority: 0.86
+    })),
+    { url: zeroCompanyGame.absoluteUrl, lastModified: zeroCompanyGame.updatedAtIso, changeFrequency: "daily", priority: 0.95 },
+    ...zeroCompanyPageList.map((page) => ({
+      url: `${site.url}${page.path}`,
+      lastModified: page.updatedAtIso,
+      changeFrequency: "daily",
+      priority: 0.9
     })),
     { url: `${site.url}/videos/`, lastModified: "2026-08-19", changeFrequency: "weekly", priority: 0.75 },
     ...videoList.map((video) => ({

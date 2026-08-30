@@ -4,6 +4,7 @@ import { howToFishGame } from "@/lib/how-to-fish";
 import { indexableGuideSlugs } from "@/lib/publishing";
 import { gamePath, pageList, pages, site } from "@/lib/site";
 import { videoPath } from "@/lib/videos";
+import { zeroCompanyGame } from "@/lib/zero-company";
 
 function formatIsoDate(isoDate) {
   return new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" })
@@ -118,6 +119,15 @@ export default function HomePage() {
         <section className="shell hub-block validation-test-block" id="current-games">
           <header className="hub-block-header"><div><p className="hub-kicker">CURRENT GAME ANSWERS</p><h2>New releases under active testing</h2></div><p>Each game earns more pages only after search impressions or real player questions show demand.</p></header>
           <div className="validation-test-list">
+            <Link className="validation-test-card" href={zeroCompanyGame.path}>
+              <img src={zeroCompanyGame.artPath} alt="Official STAR WARS Zero Company Steam artwork" width="616" height="353" />
+              <div>
+                <p><span>STEAM · RELEASED AUG 27</span><b>CHECKED AUG 30</b></p>
+                <h3>STAR WARS Zero Company current answers</h3>
+                <p>Official crash and CPU-threading status, PC fix order, Steam Deck compatibility, four difficulty levels, Permadeath and Beskar Mode.</p>
+                <strong>Open 3 launch-week answers →</strong>
+              </div>
+            </Link>
             <Link className="validation-test-card" href={howToFishGame.path}>
               <img src={howToFishGame.artPath} alt="Official How to Fish Steam artwork" width="1232" height="706" />
               <div>
