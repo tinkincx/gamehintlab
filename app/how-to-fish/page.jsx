@@ -7,7 +7,7 @@ import {
 } from "@/lib/how-to-fish";
 import { site } from "@/lib/site";
 
-const description = "Current, source-checked answers for the How to Fish Steam game: Spider Crab boat keys, Pufferfish, 8-player co-op, console plans and Steam Deck support.";
+const description = "Current, source-checked answers for the How to Fish Steam game: Drip Voxelfish and Triggerfish, Spider Crab boat keys, Pufferfish, 8-player co-op and platform support.";
 
 export const metadata = {
   title: { absolute: "How to Fish Game Guides: Bosses, Multiplayer & Platforms | Game Hint Lab" },
@@ -31,6 +31,7 @@ export const metadata = {
 };
 
 const labels = {
+  "all-fish-locations": "DRIP FISH",
   "console-crossplay": "PLATFORMS",
   "how-to-get-boat-keys": "FIRST BOSS",
   "how-to-beat-pufferfish": "ISLAND 3 BOSS",
@@ -105,9 +106,9 @@ export default function HowToFishHubPage() {
           <div className="shell steam-hub-hero-grid">
             <div className="steam-hub-copy">
               <nav className="steam-breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>How to Fish game</span></nav>
-              <div className="steam-badges"><span>STEAM GAME</span><span>CHECKED AUG 28</span><span>4 LIVE ANSWERS</span></div>
+              <div className="steam-badges"><span>STEAM GAME</span><span>CHECKED AUG 31</span><span>5 LIVE ANSWERS</span></div>
               <h1>How to Fish game guides<br />{" "}<em>current answers, no filler.</em></h1>
-              <p>This is the guide hub for Dazed Games&apos; How to Fish on Steam. It focuses on four questions people can act on now: the first boat keys, the Pufferfish route, current co-op limits and platform support.</p>
+              <p>This is the guide hub for Dazed Games&apos; How to Fish on Steam. It focuses on five questions people are searching now: Drip Voxelfish and Triggerfish, the first boat keys, the Pufferfish route, current co-op limits and platform support.</p>
               <div className="steam-hub-actions">
                 <a href="#answers">Choose a guide <span>↓</span></a>
                 <a href={howToFishGame.officialUrl} target="_blank" rel="noreferrer">View the official Steam page ↗</a>
@@ -129,7 +130,7 @@ export default function HowToFishHubPage() {
         <section className="shell steam-hub-section" id="answers">
           <header className="steam-section-header">
             <div><p className="hub-kicker">CURRENT SEARCH ANSWERS</p><h2>Start with the exact problem</h2></div>
-            <p>{publishedHowToFishPageList.length} pages are live. Unverified save paths, incomplete fish lists and stale walkthrough claims stay unpublished until they can answer the title honestly.</p>
+            <p>{publishedHowToFishPageList.length} pages are live. Source-supported routes are published first; unknown locations, rates and version-sensitive gaps are labeled instead of guessed.</p>
           </header>
           <div className="steam-question-grid">
             {publishedHowToFishPageList.map((page, index) => (
@@ -171,7 +172,7 @@ export default function HowToFishHubPage() {
         </section>
 
         <section className="shell steam-hub-section hub-faq">
-          <header className="steam-section-header"><div><p className="hub-kicker">QUICK ANSWERS</p><h2>How to Fish game FAQ</h2></div><p>Short answers based on the latest source checked on August 28, 2026.</p></header>
+          <header className="steam-section-header"><div><p className="hub-kicker">QUICK ANSWERS</p><h2>How to Fish game FAQ</h2></div><p>Short answers based on the latest source check on August 31, 2026.</p></header>
           <div className="faq-list">{hubFaqs.map((item) => <details key={item.q}><summary>{item.q}<span>+</span></summary><p>{item.a}</p></details>)}</div>
         </section>
       </main>

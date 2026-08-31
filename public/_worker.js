@@ -1,6 +1,5 @@
 const retiredHowToFishPaths = new Set([
   "/how-to-fish/achievements-guide/",
-  "/how-to-fish/all-fish-locations/",
   "/how-to-fish/all-guns-weapons/",
   "/how-to-fish/black-screen-fix/",
   "/how-to-fish/boat-engine-upgrades/",

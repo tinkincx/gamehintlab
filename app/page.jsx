@@ -131,10 +131,10 @@ export default function HomePage() {
             <Link className="validation-test-card" href={howToFishGame.path}>
               <img src={howToFishGame.artPath} alt="Official How to Fish Steam artwork" width="1232" height="706" />
               <div>
-                <p><span>STEAM · RELEASED AUG 20</span><b>CHECKED AUG 28</b></p>
+                <p><span>STEAM · RELEASED AUG 20</span><b>CHECKED AUG 31</b></p>
                 <h3>How to Fish game guides</h3>
-                <p>Boat keys, Pufferfish, eight-player and private lobbies, console plans, crossplay status and Steam Deck verification.</p>
-                <strong>Open 4 current answers →</strong>
+                <p>Drip Voxelfish and Triggerfish routes, boat keys, Pufferfish, eight-player and private lobbies, console plans, crossplay and Steam Deck verification.</p>
+                <strong>Open 5 current answers →</strong>
               </div>
             </Link>
             <Link className="validation-test-card" href={shadowDungeonPath}>
