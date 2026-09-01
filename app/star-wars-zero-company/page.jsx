@@ -8,10 +8,10 @@ import {
 import { site } from "@/lib/site";
 
 const description =
-  "Current, source-checked STAR WARS Zero Company answers for crashes and stuttering, Steam Deck support, manual saves, Permadeath and Beskar Mode.";
+  "Current, source-checked STAR WARS Zero Company answers for enemy-turn soft locks, crashes and stuttering, SteamOS and Steam Deck support, Permadeath and Beskar Mode.";
 
 export const metadata = {
-  title: { absolute: "STAR WARS Zero Company Guides: Fixes, Deck & Difficulty | Game Hint Lab" },
+  title: { absolute: "STAR WARS Zero Company Guides: Fixes, SteamOS & Difficulty | Game Hint Lab" },
   description,
   alternates: { canonical: zeroCompanyGame.path },
   robots: {
@@ -37,8 +37,12 @@ const hubFaqs = [
     a: "Electronic Arts released STAR WARS Zero Company on August 27, 2026 for PC, PlayStation 5 and Xbox Series X|S."
   },
   {
-    q: "Is STAR WARS Zero Company Steam Deck Verified?",
-    a: "No. Valve's live compatibility result currently marks the game Unsupported and says SteamOS does not support it."
+    q: "What if STAR WARS Zero Company is stuck on the enemy turn?",
+    a: "Record the mission, round and last enemy action, then exit and load the most recent available save. Restart, install updates and verify files before retrying. Several players have reported this soft lock, but EA has not published a dedicated fix or ETA as of September 1."
+  },
+  {
+    q: "Does STAR WARS Zero Company support SteamOS or Steam Deck?",
+    a: "Valve's live compatibility result currently marks Deck, SteamOS and Steam Machine Unsupported. Proton 11 can boot on some stronger SteamOS hardware, but current Steam Deck tests show poor native performance."
   },
   {
     q: "Why does STAR WARS Zero Company stutter on PC?",
@@ -100,9 +104,9 @@ export default function ZeroCompanyHubPage() {
           <div className="shell steam-hub-hero-grid">
             <div className="steam-hub-copy">
               <nav className="steam-breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>STAR WARS Zero Company</span></nav>
-              <div className="steam-badges"><span>NEW RELEASE</span><span>CHECKED AUG 30</span><span>{zeroCompanyPageList.length} LIVE ANSWERS</span></div>
+              <div className="steam-badges"><span>NEW RELEASE</span><span>CHECKED SEP 1</span><span>{zeroCompanyPageList.length} LIVE ANSWERS</span></div>
               <h1>STAR WARS Zero Company<br /> <em>fix the problem in front of you.</em></h1>
-              <p>This launch-week guide hub starts with three decisions that can cost time or money: whether the PC fix order matches your symptom, whether Steam Deck is a sensible platform, and which difficulty, Permadeath and Beskar settings you actually want.</p>
+              <p>This launch-week guide hub starts with four decisions that can cost time or money: how to handle an enemy-turn soft lock, whether the PC fix order matches your symptom, whether SteamOS or Steam Deck is sensible, and which difficulty, Permadeath and Beskar settings you actually want.</p>
               <div className="steam-hub-actions">
                 <a href="#answers">Choose an answer <span>↓</span></a>
                 <a href={zeroCompanyGame.officialUrl} target="_blank" rel="noreferrer">View the official Steam page ↗</a>
@@ -111,7 +115,7 @@ export default function ZeroCompanyHubPage() {
                 <div><dt>RELEASED</dt><dd>August 27, 2026</dd></div>
                 <div><dt>PLATFORMS</dt><dd>PC · PS5 · Xbox Series</dd></div>
                 <div><dt>MODE</dt><dd>Single-player tactics</dd></div>
-                <div><dt>STEAM DECK</dt><dd>Unsupported</dd></div>
+                <div><dt>DECK / STEAMOS</dt><dd>Unsupported</dd></div>
               </dl>
             </div>
             <figure className="steam-hub-art">
@@ -124,7 +128,7 @@ export default function ZeroCompanyHubPage() {
         <section className="shell steam-hub-section" id="answers">
           <header className="steam-section-header">
             <div><p className="hub-kicker">CURRENT SEARCH ANSWERS</p><h2>Start with the exact problem</h2></div>
-            <p>{zeroCompanyPageList.length} focused pages are live. Broad build rankings stay unpublished until the site sees a real query or can add something the current search results do not already answer.</p>
+            <p>{zeroCompanyPageList.length} focused pages are live. The enemy-turn page was added only after a real search query matched several fresh reports across different missions.</p>
           </header>
           <div className="steam-question-grid">
             {zeroCompanyPageList.map((page, index) => (
@@ -141,14 +145,14 @@ export default function ZeroCompanyHubPage() {
         <section className="steam-route-band">
           <div className="shell steam-hub-section">
             <header className="steam-section-header light">
-              <div><p className="hub-kicker">THREE DECISIONS, THREE DIFFERENT SIGNALS</p><h2>Do not mix support status, performance and game rules</h2></div>
+              <div><p className="hub-kicker">FOUR PROBLEMS, FOUR DIFFERENT SIGNALS</p><h2>Do not mix a soft lock, PC performance, platform support and game rules</h2></div>
               <p>Each answer uses the source that can actually establish it.</p>
             </header>
             <div className="steam-loop-grid">
+              <article><span>SOFT LOCK</span><h3>Enemy turn not ending</h3><p>Fresh player reports establish the symptom; the missing official diagnosis sets the limits of the advice.</p></article>
               <article><span>PC</span><h3>Crash and stutter order</h3><p>EA's reversible troubleshooting sequence comes before random launch-week tweaks.</p></article>
-              <article><span>DECK</span><h3>Live compatibility status</h3><p>Valve currently says Unsupported; an independent test explains why a forced boot is not enough.</p></article>
+              <article><span>STEAMOS</span><h3>Support versus launch</h3><p>Valve says Unsupported; Proton can boot on some hardware, while Deck tests still show poor performance.</p></article>
               <article><span>DIFFICULTY</span><h3>Campaign choices lock</h3><p>EA lists four difficulty levels and confirms one-save Beskar Mode plus Campaign-locked Permadeath.</p></article>
-              <article><span>NEXT</span><h3>GSC decides expansion</h3><p>New pages are added only after search queries reveal a specific unanswered player problem.</p></article>
             </div>
           </div>
         </section>
@@ -166,7 +170,7 @@ export default function ZeroCompanyHubPage() {
         </section>
 
         <section className="shell steam-hub-section hub-faq">
-          <header className="steam-section-header"><div><p className="hub-kicker">QUICK ANSWERS</p><h2>STAR WARS Zero Company FAQ</h2></div><p>Short answers checked on August 30, 2026.</p></header>
+          <header className="steam-section-header"><div><p className="hub-kicker">QUICK ANSWERS</p><h2>STAR WARS Zero Company FAQ</h2></div><p>Short answers checked on September 1, 2026.</p></header>
           <div className="faq-list">{hubFaqs.map((item) => <details key={item.q}><summary>{item.q}<span>+</span></summary><p>{item.a}</p></details>)}</div>
         </section>
       </main>
