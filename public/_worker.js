@@ -1,4 +1,4 @@
-const retiredHowToFishPaths = new Set([
+const retiredGuidePaths = new Set([
   "/how-to-fish/achievements-guide/",
   "/how-to-fish/all-guns-weapons/",
   "/how-to-fish/black-screen-fix/",
@@ -13,7 +13,10 @@ const retiredHowToFishPaths = new Set([
   "/how-to-fish/how-to-get-leeches/",
   "/how-to-fish/how-to-get-shark/",
   "/how-to-fish/how-to-use-boat-radar/",
-  "/how-to-fish/save-file-location/"
+  "/how-to-fish/save-file-location/",
+  "/grow-a-chicken-fighter/arena-ascension-egg/",
+  "/grow-a-chicken-fighter/official-links/",
+  "/cheating-during-testing/guide/"
 ]);
 
 function normalizePathname(pathname) {
@@ -46,7 +49,7 @@ function retiredResponse(request) {
     <main>
       <h1>This guide has been retired.</h1>
       <p>It did not meet our current sourcing standard.</p>
-      <p><a href="/how-to-fish/">Browse the verified How to Fish guides</a>.</p>
+      <p><a href="/">Browse the current Game Hint Lab guides</a>.</p>
     </main>
   </body>
 </html>`,
@@ -58,7 +61,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (retiredHowToFishPaths.has(normalizePathname(url.pathname))) {
+    if (retiredGuidePaths.has(normalizePathname(url.pathname))) {
       return retiredResponse(request);
     }
 

@@ -102,7 +102,7 @@ export function ArticlePage({ page }) {
     url: site.officialGameUrl,
     gamePlatform: "Roblox",
     applicationCategory: "Game",
-    author: { "@type": "Organization", name: "Sergio Verse Games" },
+    author: { "@type": "Organization", name: "Grow a Chicken Fighter" },
     dateCreated: "2026-06-16"
   };
 

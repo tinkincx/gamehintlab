@@ -39,7 +39,7 @@ export default function AboutPage() {
               </div>
             </section>
             <section className="article-section" id="independence"><div className="section-heading"><span>03</span><h2>Editorial independence and affiliation</h2></div>
-              <p>Game Hint Lab is independently operated. It is not affiliated with, endorsed by or sponsored by Roblox Corporation, Valve Corporation, Sergio Verse Games, OO Cat or any other game developer or publisher mentioned on this site. Game names, platform names, logos and related marks belong to their respective owners.</p>
+              <p>Game Hint Lab is independently operated. It is not affiliated with, endorsed by or sponsored by Roblox Corporation, Valve Corporation, the Grow a Chicken Fighter creator group (formerly Sergio Verse Games), OO Cat or any other game developer or publisher mentioned on this site. Game names, platform names, logos and related marks belong to their respective owners.</p>
               <p>Game Hint Lab uses privacy-controlled Google Analytics for audience measurement. The site currently includes Google AdSense ownership verification and an <code>ads.txt</code> declaration, but it does not load AdSense ad-display scripts or show AdSense advertisements. Measurement and verification details are explained in our <Link href="/privacy/">Privacy Policy</Link>.</p>
             </section>
             <section className="article-section" id="corrections"><div className="section-heading"><span>04</span><h2>Corrections and feedback</h2></div>

@@ -16,7 +16,7 @@ const shadowDungeonPath = "/shadow-dungeon/difficulty/";
 const shadowDungeonImage = "/shadow-dungeon/game-art.jpg";
 
 export const metadata = {
-  title: { absolute: "Grow a Chicken Fighter Guides | Game Hint Lab" },
+  title: { absolute: "Game Hint Lab: Current Game Guides, Fixes & Codes" },
   description: site.description,
   alternates: { canonical: "/" },
   robots: {
@@ -64,7 +64,7 @@ const allGuides = pageList;
 
 export default function HomePage() {
   const website = { "@context": "https://schema.org", "@type": "WebSite", name: site.name, url: site.url, description: site.description, inLanguage: "en" };
-  const game = { "@context": "https://schema.org", "@type": "VideoGame", name: site.gameName, url: site.officialGameUrl, gamePlatform: "Roblox", applicationCategory: "Game", author: { "@type": "Organization", name: "Sergio Verse Games" } };
+  const game = { "@context": "https://schema.org", "@type": "VideoGame", name: site.gameName, url: site.officialGameUrl, gamePlatform: "Roblox", applicationCategory: "Game", author: { "@type": "Organization", name: "Grow a Chicken Fighter" } };
   const faq = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: homeFaqs.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) };
 
   return (
@@ -77,26 +77,26 @@ export default function HomePage() {
             <i /><i /><i />
           </div>
           <div className="hub-masthead-copy">
-            <div className="hub-badges"><span>UNOFFICIAL FAN GUIDE</span><span>ROBLOX</span><span>{indexableGuideSlugs.size} LIVE GUIDES</span></div>
-            <h1>Grow a Chicken Fighter</h1>
-            <p className="hub-tagline">Codes, best skills, chickens, eggs, Tower progression, fusion and rebirth guides.</p>
+            <div className="hub-badges"><span>INDEPENDENT GAME GUIDES</span><span>4 GAMES TESTING</span><span>SOURCE CHECKED</span></div>
+            <h1>Game Hint Lab</h1>
+            <p className="hub-tagline">Direct answers for current games—built only when search demand and verifiable sources justify the page.</p>
             <dl className="hub-facts">
-              <div><dt>CREATOR</dt><dd>Sergio Verse Games</dd></div>
-              <div><dt>START HERE</dt><dd>Recycler cash → Feeder levels → Tower</dd></div>
-              <div><dt>CODE TRACKER</dt><dd className="fact-highlight">6 reported · 1 developer-listed</dd></div>
-              <div><dt>CODE CHECKED</dt><dd>{codesCheckedAt}</dd></div>
+              <div><dt>ACTIVE TESTS</dt><dd>Roblox + new Steam releases</dd></div>
+              <div><dt>METHOD</dt><dd>Search signal → source check → direct answer</dd></div>
+              <div><dt>GROW GUIDES</dt><dd className="fact-highlight">{indexableGuideSlugs.size} live · 7 reported codes</dd></div>
+              <div><dt>LATEST CHECK</dt><dd>September 3, 2026</dd></div>
             </dl>
             <div className="hub-actions">
-              <Link className="hub-primary" href={gamePath("beginner-guide")}>Start here <span>→</span></Link>
+              <a className="hub-primary" href="#current-games">Choose a game <span>→</span></a>
+              <Link href={gamePath("beginner-guide")}>Grow beginner guide</Link>
               <Link href={gamePath("codes")}>Open current codes</Link>
-              <Link href={gamePath("abilities")}>Compare best skills</Link>
-              <a href={site.officialGameUrl} target="_blank" rel="noreferrer">Play on Roblox ↗</a>
+              <Link href={zeroCompanyGame.path}>Zero Company issues</Link>
             </div>
           </div>
         </section>
 
         <section className="shell hub-block">
-          <header className="hub-block-header"><div><p className="hub-kicker">CHOOSE A GOAL</p><h2>What do you need?</h2></div><p>Open the guide that answers the decision in front of you.</p></header>
+          <header className="hub-block-header"><div><p className="hub-kicker">GROW A CHICKEN FIGHTER</p><h2>Choose a current answer</h2></div><p>Open the guide that answers the decision in front of you.</p></header>
           <div className="goal-grid">
             {goals.map((goal, index) => (
               <Link className="goal-card" href={gamePath(goal.slug)} key={goal.slug}>
@@ -122,10 +122,10 @@ export default function HomePage() {
             <Link className="validation-test-card" href={zeroCompanyGame.path}>
               <img src={zeroCompanyGame.artPath} alt="Official STAR WARS Zero Company Steam artwork" width="616" height="353" />
               <div>
-                <p><span>STEAM · RELEASED AUG 27</span><b>CHECKED AUG 30</b></p>
+                <p><span>STEAM · RELEASED AUG 27</span><b>CHECKED SEP 3</b></p>
                 <h3>STAR WARS Zero Company current answers</h3>
-                <p>Official crash and CPU-threading status, PC fix order, Steam Deck compatibility, four difficulty levels, Permadeath and Beskar Mode.</p>
-                <strong>Open 3 launch-week answers →</strong>
+                <p>Official issue and patch status, crash and CPU-threading guidance, PC fix order, SteamOS support, four difficulty levels, Permadeath and Beskar Mode.</p>
+                <strong>Open 5 launch-week answers →</strong>
               </div>
             </Link>
             <Link className="validation-test-card" href={howToFishGame.path}>
@@ -190,7 +190,7 @@ export default function HomePage() {
         </section>
 
         <section className="hub-trust-band"><div className="shell trust-grid-new">
-          <article><span>01</span><h2>Unofficial</h2><p>Independent fan guide, not affiliated with Roblox or Sergio Verse Games.</p></article>
+          <article><span>01</span><h2>Unofficial</h2><p>Independent guide site, not affiliated with the games, developers, publishers or platforms covered.</p></article>
           <article><span>02</span><h2>Straight answers</h2><p>Each guide starts with the next useful action, then explains the details.</p></article>
           <article><span>03</span><h2>Current checks</h2><p>Every changing fact carries a check date, so you can spot old advice quickly.</p></article>
         </div></section>

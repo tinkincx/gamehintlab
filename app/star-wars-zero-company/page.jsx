@@ -8,10 +8,10 @@ import {
 import { site } from "@/lib/site";
 
 const description =
-  "Current, source-checked STAR WARS Zero Company answers for enemy-turn soft locks, crashes and stuttering, SteamOS and Steam Deck support, Permadeath and Beskar Mode.";
+  "Current, source-checked STAR WARS Zero Company issue updates, patch status, enemy-turn soft locks, crashes and stuttering, SteamOS support, Permadeath and Beskar Mode.";
 
 export const metadata = {
-  title: { absolute: "STAR WARS Zero Company Guides: Fixes, SteamOS & Difficulty | Game Hint Lab" },
+  title: { absolute: "STAR WARS Zero Company Issue Updates, Fixes & Guides | Game Hint Lab" },
   description,
   alternates: { canonical: zeroCompanyGame.path },
   robots: {
@@ -38,7 +38,11 @@ const hubFaqs = [
   },
   {
     q: "What if STAR WARS Zero Company is stuck on the enemy turn?",
-    a: "Record the mission, round and last enemy action, then exit and load the most recent available save. Restart, install updates and verify files before retrying. Several players have reported this soft lock, but EA has not published a dedicated fix or ETA as of September 1."
+    a: "Record the mission, round and last enemy action, then exit and load the most recent available save. Restart, install updates and verify files before retrying. Several players have reported this soft lock, but EA has not published a dedicated fix as of September 3."
+  },
+  {
+    q: "What is the current STAR WARS Zero Company patch status?",
+    a: "EA says it is implementing crash and CPU-threading fixes and investigating the 100% hit-chance bug. Its pinned issue post does not list a released patch version or fixed-issue list as of September 3, 2026."
   },
   {
     q: "Does STAR WARS Zero Company support SteamOS or Steam Deck?",
@@ -104,9 +108,9 @@ export default function ZeroCompanyHubPage() {
           <div className="shell steam-hub-hero-grid">
             <div className="steam-hub-copy">
               <nav className="steam-breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>STAR WARS Zero Company</span></nav>
-              <div className="steam-badges"><span>NEW RELEASE</span><span>CHECKED SEP 1</span><span>{zeroCompanyPageList.length} LIVE ANSWERS</span></div>
+              <div className="steam-badges"><span>NEW RELEASE</span><span>CHECKED SEP 3</span><span>{zeroCompanyPageList.length} LIVE ANSWERS</span></div>
               <h1>STAR WARS Zero Company<br /> <em>fix the problem in front of you.</em></h1>
-              <p>This launch-week guide hub starts with four decisions that can cost time or money: how to handle an enemy-turn soft lock, whether the PC fix order matches your symptom, whether SteamOS or Steam Deck is sensible, and which difficulty, Permadeath and Beskar settings you actually want.</p>
+              <p>This launch-week guide hub starts with the issue and patch status, then separates an enemy-turn soft lock, PC troubleshooting, SteamOS support and permanent Campaign choices into the exact answer you need.</p>
               <div className="steam-hub-actions">
                 <a href="#answers">Choose an answer <span>↓</span></a>
                 <a href={zeroCompanyGame.officialUrl} target="_blank" rel="noreferrer">View the official Steam page ↗</a>
@@ -128,7 +132,7 @@ export default function ZeroCompanyHubPage() {
         <section className="shell steam-hub-section" id="answers">
           <header className="steam-section-header">
             <div><p className="hub-kicker">CURRENT SEARCH ANSWERS</p><h2>Start with the exact problem</h2></div>
-            <p>{zeroCompanyPageList.length} focused pages are live. The enemy-turn page was added only after a real search query matched several fresh reports across different missions.</p>
+            <p>{zeroCompanyPageList.length} focused pages are live. The issue tracker and enemy-turn answer were added only after real search queries matched current official status and fresh reports.</p>
           </header>
           <div className="steam-question-grid">
             {zeroCompanyPageList.map((page, index) => (
@@ -145,10 +149,11 @@ export default function ZeroCompanyHubPage() {
         <section className="steam-route-band">
           <div className="shell steam-hub-section">
             <header className="steam-section-header light">
-              <div><p className="hub-kicker">FOUR PROBLEMS, FOUR DIFFERENT SIGNALS</p><h2>Do not mix a soft lock, PC performance, platform support and game rules</h2></div>
+              <div><p className="hub-kicker">FIVE PROBLEMS, DIFFERENT EVIDENCE</p><h2>Do not mix patch status, a soft lock, PC performance, platform support and game rules</h2></div>
               <p>Each answer uses the source that can actually establish it.</p>
             </header>
             <div className="steam-loop-grid">
+              <article><span>PATCH STATUS</span><h3>Acknowledged is not fixed</h3><p>EA's pinned issue post names current work, while only a released build and notes can establish that a fix shipped.</p></article>
               <article><span>SOFT LOCK</span><h3>Enemy turn not ending</h3><p>Fresh player reports establish the symptom; the missing official diagnosis sets the limits of the advice.</p></article>
               <article><span>PC</span><h3>Crash and stutter order</h3><p>EA's reversible troubleshooting sequence comes before random launch-week tweaks.</p></article>
               <article><span>STEAMOS</span><h3>Support versus launch</h3><p>Valve says Unsupported; Proton can boot on some hardware, while Deck tests still show poor performance.</p></article>
@@ -163,14 +168,15 @@ export default function ZeroCompanyHubPage() {
             <h2>The source must match the claim.</h2>
           </div>
           <div className="steam-method-list">
-            <article><span>1</span><div><h3><a href={zeroCompanySources.troubleshooting.url} target="_blank" rel="noreferrer">EA troubleshooting ↗</a></h3><p>Official fix order for crashes, black screens, stuttering and low frame rates.</p></div></article>
-            <article><span>2</span><div><h3><a href={zeroCompanySources.deckReport.url} target="_blank" rel="noreferrer">Valve compatibility ↗</a></h3><p>The live Steam Deck category, checked separately from anecdotes about whether the game can boot.</p></div></article>
-            <article><span>3</span><div><h3><a href={zeroCompanySources.combatGuide.url} target="_blank" rel="noreferrer">EA campaign rules ↗</a></h3><p>Campaign saves, locked Permadeath choices, Beskar Mode and the three-injury rule.</p></div></article>
+            <article><span>1</span><div><h3><a href={zeroCompanySources.issueUpdates.url} target="_blank" rel="noreferrer">EA issue updates ↗</a></h3><p>Developer-acknowledged bugs, work in progress and hardware-specific guidance.</p></div></article>
+            <article><span>2</span><div><h3><a href={zeroCompanySources.troubleshooting.url} target="_blank" rel="noreferrer">EA troubleshooting ↗</a></h3><p>Official fix order for crashes, black screens, stuttering and low frame rates.</p></div></article>
+            <article><span>3</span><div><h3><a href={zeroCompanySources.deckReport.url} target="_blank" rel="noreferrer">Valve compatibility ↗</a></h3><p>The live Steam Deck category, checked separately from anecdotes about whether the game can boot.</p></div></article>
+            <article><span>4</span><div><h3><a href={zeroCompanySources.combatGuide.url} target="_blank" rel="noreferrer">EA campaign rules ↗</a></h3><p>Campaign saves, locked Permadeath choices, Beskar Mode and the three-injury rule.</p></div></article>
           </div>
         </section>
 
         <section className="shell steam-hub-section hub-faq">
-          <header className="steam-section-header"><div><p className="hub-kicker">QUICK ANSWERS</p><h2>STAR WARS Zero Company FAQ</h2></div><p>Short answers checked on September 1, 2026.</p></header>
+          <header className="steam-section-header"><div><p className="hub-kicker">QUICK ANSWERS</p><h2>STAR WARS Zero Company FAQ</h2></div><p>Short answers checked on September 3, 2026.</p></header>
           <div className="faq-list">{hubFaqs.map((item) => <details key={item.q}><summary>{item.q}<span>+</span></summary><p>{item.a}</p></details>)}</div>
         </section>
       </main>
