@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { gamePath, site } from "@/lib/site";
 import { zeroCompanyGame } from "@/lib/zero-company";
+import { dawnwalkerGame } from "@/lib/dawnwalker";
 
 export function SiteHeader() {
   return (
@@ -18,8 +19,8 @@ export function SiteHeader() {
         <nav className="main-nav" aria-label="Game guides">
           <Link href="/">Guide Hub</Link>
           <Link href={zeroCompanyGame.path}>Zero Company</Link>
+          <Link href={dawnwalkerGame.path}>Dawnwalker</Link>
           <Link href="/how-to-fish/">How to Fish</Link>
-          <Link href={gamePath("abilities")}>Best Skills</Link>
           <Link href={gamePath("codes")}>Codes</Link>
           <Link href="/videos/">Videos</Link>
         </nav>

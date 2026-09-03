@@ -9,6 +9,10 @@ import {
   zeroCompanyGame,
   zeroCompanyPageList
 } from "@/lib/zero-company";
+import {
+  dawnwalkerGame,
+  dawnwalkerPageList
+} from "@/lib/dawnwalker";
 
 export const dynamic = "force-static";
 
@@ -18,7 +22,9 @@ export default function sitemap() {
     howToFishGame.updatedAtIso,
     ...publishedHowToFishPageList.map((page) => page.updatedAtIso),
     zeroCompanyGame.updatedAtIso,
-    ...zeroCompanyPageList.map((page) => page.updatedAtIso)
+    ...zeroCompanyPageList.map((page) => page.updatedAtIso),
+    dawnwalkerGame.updatedAtIso,
+    ...dawnwalkerPageList.map((page) => page.updatedAtIso)
   ].reduce((latest, current) => current > latest ? current : latest, site.checkedAtIso);
 
   return [
@@ -38,6 +44,13 @@ export default function sitemap() {
     })),
     { url: zeroCompanyGame.absoluteUrl, lastModified: zeroCompanyGame.updatedAtIso, changeFrequency: "daily", priority: 0.95 },
     ...zeroCompanyPageList.map((page) => ({
+      url: `${site.url}${page.path}`,
+      lastModified: page.updatedAtIso,
+      changeFrequency: "daily",
+      priority: 0.9
+    })),
+    { url: dawnwalkerGame.absoluteUrl, lastModified: dawnwalkerGame.updatedAtIso, changeFrequency: "daily", priority: 0.95 },
+    ...dawnwalkerPageList.map((page) => ({
       url: `${site.url}${page.path}`,
       lastModified: page.updatedAtIso,
       changeFrequency: "daily",

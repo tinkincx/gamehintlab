@@ -5,6 +5,7 @@ import { indexableGuideSlugs } from "@/lib/publishing";
 import { gamePath, pageList, pages, site } from "@/lib/site";
 import { videoPath } from "@/lib/videos";
 import { zeroCompanyGame } from "@/lib/zero-company";
+import { dawnwalkerGame, dawnwalkerPath } from "@/lib/dawnwalker";
 
 function formatIsoDate(isoDate) {
   return new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" })
@@ -77,7 +78,7 @@ export default function HomePage() {
             <i /><i /><i />
           </div>
           <div className="hub-masthead-copy">
-            <div className="hub-badges"><span>INDEPENDENT GAME GUIDES</span><span>4 GAMES TESTING</span><span>SOURCE CHECKED</span></div>
+            <div className="hub-badges"><span>INDEPENDENT GAME GUIDES</span><span>5 GAMES TESTING</span><span>SOURCE CHECKED</span></div>
             <h1>Game Hint Lab</h1>
             <p className="hub-tagline">Direct answers for current games—built only when search demand and verifiable sources justify the page.</p>
             <dl className="hub-facts">
@@ -90,6 +91,7 @@ export default function HomePage() {
               <a className="hub-primary" href="#current-games">Choose a game <span>→</span></a>
               <Link href={gamePath("beginner-guide")}>Grow beginner guide</Link>
               <Link href={gamePath("codes")}>Open current codes</Link>
+              <Link href={dawnwalkerPath("30-day-timer")}>Dawnwalker timer</Link>
               <Link href={zeroCompanyGame.path}>Zero Company issues</Link>
             </div>
           </div>
@@ -119,6 +121,15 @@ export default function HomePage() {
         <section className="shell hub-block validation-test-block" id="current-games">
           <header className="hub-block-header"><div><p className="hub-kicker">CURRENT GAME ANSWERS</p><h2>New releases under active testing</h2></div><p>Each game earns more pages only after search impressions or real player questions show demand.</p></header>
           <div className="validation-test-list">
+            <Link className="validation-test-card" href={dawnwalkerGame.path}>
+              <img src={dawnwalkerGame.artPath} alt="Official The Blood of Dawnwalker Steam artwork" width="616" height="353" />
+              <div>
+                <p><span>STEAM · RELEASED SEP 3</span><b>CHECKED SEP 3</b></p>
+                <h3>The Blood of Dawnwalker current answers</h3>
+                <p>The 30-day timer and deadline, PC stuttering and frame-generation tests, plus a day-and-night beginner skill foundation.</p>
+                <strong>Open 3 launch-day answers →</strong>
+              </div>
+            </Link>
             <Link className="validation-test-card" href={zeroCompanyGame.path}>
               <img src={zeroCompanyGame.artPath} alt="Official STAR WARS Zero Company Steam artwork" width="616" height="353" />
               <div>

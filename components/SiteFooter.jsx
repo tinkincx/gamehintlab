@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AnalyticsPreferencesButton } from "@/components/AnalyticsPreferencesButton";
 import { gamePath, navigation, site } from "@/lib/site";
 import { zeroCompanyGame } from "@/lib/zero-company";
+import { dawnwalkerGame } from "@/lib/dawnwalker";
 
 export function SiteFooter() {
   return (
@@ -14,6 +15,7 @@ export function SiteFooter() {
         <div>
           <h2>Game guides</h2>
           <div className="footer-links">
+            <Link href={dawnwalkerGame.path}>The Blood of Dawnwalker</Link>
             <Link href={zeroCompanyGame.path}>STAR WARS Zero Company</Link>
             <Link href="/how-to-fish/">How to Fish</Link>
             <Link href="/#all-guides">Grow a Chicken Fighter</Link>
